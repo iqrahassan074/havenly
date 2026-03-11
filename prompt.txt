@@ -1,0 +1,62 @@
+You are a senior frontend engineer and UI/UX designer.
+
+Create a **modern, classy, and animated furniture website / landing page** suitable for a portfolio project. Focus on **polished UI/UX, clean layouts, and smooth animations**, using **mock data only** (no backend required).
+
+Tech Stack:
+- Next.js (latest version)
+- React
+- Tailwind CSS
+- Framer Motion (for animations)
+- Optional: React Icons
+
+Requirements:
+
+1️⃣ Hero Section
+- Full-width hero with elegant furniture image or illustration  
+- Heading and subheading with **fade-in / slide-up animation**  
+- CTA button (Shop Now / Explore) with **hover pulse/scale animation**  
+- Optional subtle background gradient or particles  
+
+2️⃣ Featured Products Section
+- Grid of 6–12 furniture items  
+- Cards with image, title, price  
+- Hover effects: lift, shadow, subtle zoom  
+- Staggered animation on scroll (fade-in / slide-up)  
+
+3️⃣ Product Details Modal
+- Clicking a product opens animated modal  
+- Shows larger image, description, price, material/variants  
+- Smooth open/close animation  
+
+4️⃣ Testimonials Section
+- Customer reviews in carousel / slider  
+- Avatar + text fade-in  
+- Optional backdrop blur effect (glassmorphism style)  
+
+5️⃣ About / Story Section
+- Elegant info section about the brand / studio  
+- Smooth scroll reveal animation  
+- Optional subtle icons or illustrations  
+
+6️⃣ Navbar & Footer
+- Responsive sticky navbar with smooth scroll highlight  
+- Hamburger menu animation on mobile  
+- Footer with social icons and links, hover animations  
+
+7️⃣ UI/UX Features
+- Dark mode toggle  
+- Smooth scroll for internal links  
+- Modern, clean color palette (light, neutral, soft accents)  
+- Typography hierarchy: headings, body, buttons  
+- Micro-interactions: hover effects on buttons, links, product cards  
+
+8️⃣ Project Structure
+- Reusable React components  
+- Folder structure ready for deployment  
+- Mock data JSON for products and testimonials  
+- Tailwind + Framer Motion animations applied  
+
+9️⃣ Output
+- Fully interactive frontend code  
+- Deployable on Vercel / Netlify  
+- Portfolio-ready modern furniture website with classy animations  

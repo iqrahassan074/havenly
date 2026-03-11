@@ -1,0 +1,294 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 24 10% 10%;
+    --primary: 28 65% 52%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 36 60% 85%;
+    --secondary-foreground: 24 10% 10%;
+    --accent: 45 50% 60%;
+    --accent-foreground: 24 10% 10%;
+    --muted: 36 30% 96%;
+    --muted-foreground: 24 5% 45%;
+    --card: 0 0% 100%;
+    --card-foreground: 24 10% 10%;
+    --border: 36 20% 90%;
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --info: 217 91% 60%;
+    --info-foreground: 0 0% 100%;
+  }
+
+  .dark {
+    --background: 24 10% 8%;
+    --foreground: 36 30% 96%;
+    --primary: 28 65% 52%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 36 40% 25%;
+    --secondary-foreground: 36 30% 96%;
+    --accent: 45 50% 40%;
+    --accent-foreground: 36 30% 96%;
+    --muted: 24 10% 15%;
+    --muted-foreground: 36 20% 65%;
+    --card: 24 10% 10%;
+    --card-foreground: 36 30% 96%;
+    --border: 24 10% 20%;
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 100%;
+    --info: 217 91% 60%;
+    --info-foreground: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-primary;
+  }
+
+  .glass {
+    @apply backdrop-blur-xl bg-white/10 border border-white/20;
+  }
+
+  .dark .glass {
+    @apply backdrop-blur-xl bg-black/20 border border-white/10;
+  }
+
+  .glass-card {
+    @apply backdrop-blur-xl bg-white/70 dark:bg-black/30 border border-white/20 dark:border-white/5;
+  }
+
+  /* Modern gradient backgrounds */
+  .gradient-mesh {
+    background: 
+      radial-gradient(at 0% 0%, hsla(28, 65%, 52%, 0.15) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(45, 50%, 60%, 0.15) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, hsla(28, 65%, 52%, 0.15) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsla(36, 60%, 85%, 0.15) 0px, transparent 50%);
+  }
+
+  .gradient-orb {
+    background: radial-gradient(circle at center, hsla(var(--primary), 0.3) 0%, transparent 70%);
+  }
+
+  /* Smooth scroll behavior */
+  .smooth-scroll {
+    scroll-behavior: smooth;
+  }
+
+  /* Text shadow for depth */
+  .text-shadow {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Card hover effects */
+  .card-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Shimmer effect */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.2) 50%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  /* Glow effect */
+  .glow {
+    box-shadow: 0 0 20px rgba(217, 119, 68, 0.3);
+  }
+  .glow:hover {
+    box-shadow: 0 0 40px rgba(217, 119, 68, 0.5);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-muted;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-secondary;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary;
+}
+
+/* Animation utilities */
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-bounce-slow {
+    animation: bounce 3s infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Gradient background */
+.gradient-bg {
+  background: linear-gradient(135deg,
+    hsl(var(--background)) 0%,
+    hsl(var(--secondary)) 50%,
+    hsl(var(--background)) 100%);
+}
+
+.dark .gradient-bg {
+  background: linear-gradient(135deg,
+    hsl(var(--background)) 0%,
+    hsl(var(--secondary)) 30%,
+    hsl(var(--background)) 100%);
+}
+
+/* Toast Notifications */
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  animation: slideIn 0.3s ease-out;
+  min-width: 300px;
+}
+
+.toast-success {
+  background: rgba(34, 197, 94, 0.9);
+  color: white;
+}
+
+.toast-error {
+  background: rgba(239, 68, 68, 0.9);
+  color: white;
+}
+
+.toast-info {
+  background: rgba(59, 130, 246, 0.9);
+  color: white;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+/* Selection color */
+::selection {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: 2px;
+}
+
+/* Input autofill styles */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: hsl(var(--foreground));
+  -webkit-box-shadow: 0 0 0px 1000px hsl(var(--background)) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
